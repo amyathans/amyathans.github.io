@@ -52,24 +52,24 @@
             letter-spacing: -1px;
         }
 
-        /* Profile photo styles */
-        .profile-photo-container {
-            position: absolute;
-            top: 32px;
-            left: 32px;
-            z-index: 110;
+        /* Large profile photo styles below header */
+        .profile-photo-hero {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5rem;
+            margin-bottom: 3rem;
         }
-        .profile-photo {
-            width: 140px;
-            height: 140px;
+        .profile-photo-large {
+            width: 360px;
+            height: 360px;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid #fff;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            border: 8px solid #fff;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.16);
             background: #eee;
             display: block;
         }
-
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -87,11 +87,9 @@
                 justify-content: center;
             }
 
-            .profile-photo-container {
-                position: static;
-                margin: 0 auto 1rem auto;
-                display: flex;
-                justify-content: center;
+            .profile-photo-large {
+                width: 200px;
+                height: 200px;
             }
         }
 
@@ -418,22 +416,22 @@
 <body>
     <div class="container">
         <header>
-            <!-- Profile photo in the top left -->
-            <div class="profile-photo-container">
-                <img src="profile.png" alt="Profile photo" class="profile-photo">
-            </div>
             <div class="header-content">
                 <div class="logo">My Handwritten Journal</div>
                 <nav>
                     <ul>
                         <li><a href="index.html" class="active">Journal</a></li>
                         <li><a href="photos/index.html">Photos</a></li>
-                        <!-- Recipes link removed -->
                         <li><a href="#about">About</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
+
+        <!-- Large profile photo centered below header -->
+        <div class="profile-photo-hero">
+            <img src="profile.png" alt="Profile photo" class="profile-photo-large">
+        </div>
 
         <main>
             <section class="hero">
