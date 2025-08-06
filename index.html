@@ -52,6 +52,49 @@
             letter-spacing: -1px;
         }
 
+        /* Profile photo styles */
+        .profile-photo-container {
+            position: absolute;
+            top: 32px;
+            left: 32px;
+            z-index: 110;
+        }
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            background: #eee;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .profile-photo-container {
+                position: static;
+                margin: 0 auto 1rem auto;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -102,6 +145,7 @@
             padding: 4rem 0 6rem;
             margin-bottom: 4rem;
             border-bottom: 1px solid #000;
+            position: relative;
         }
 
         .hero h1 {
@@ -298,22 +342,6 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            .logo {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                gap: 2rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -390,6 +418,10 @@
 <body>
     <div class="container">
         <header>
+            <!-- Profile photo in the top left -->
+            <div class="profile-photo-container">
+                <img src="profile.png" alt="Profile photo" class="profile-photo">
+            </div>
             <div class="header-content">
                 <div class="logo">My Handwritten Journal</div>
                 <nav>
